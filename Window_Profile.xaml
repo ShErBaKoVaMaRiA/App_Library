@@ -1,0 +1,50 @@
+﻿<Window x:Class="App_Library.Window_Profile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:App_Library"
+        WindowState="Maximized"
+         mc:Ignorable="d"
+         Height="750" Width="1300">
+    <Grid>
+        <Grid Height="59" VerticalAlignment="Top">
+            <TextBlock Height="59" Text="  Библиотека №209" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="Auto" FontSize="48" FontFamily="Bahnschrift SemiBold Condensed" Foreground="White" Background="#FF7C5E3B" Margin="0,0,0,0"/>
+            <Button Name="btn_profile" HorizontalAlignment="Right" Margin="0,9,88,0" Content="Пользователь" VerticalAlignment="Top" FontSize="22" Foreground="White" Background="#FF575151" BorderBrush="White" Width="324" Height="41" Click="btn_profile_Click"/>
+            <Button Name="btn_authexit" Content="⍈" HorizontalAlignment="Right" Margin="0,0,10,7" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="36" Width="59" Click="btn_authexit_Click"/>
+        </Grid>
+        <StackPanel Name="Menu" Margin="0,59,0,0" Orientation="Horizontal" Background="#FF727272" Height="50" VerticalAlignment="Top">
+            <Button Name="btn_catalog" Content="Поиск" FontSize="30" Background="#FF727272" BorderBrush="#FF727272" Foreground="White" Width="110" Click="btn_catalog_Click"></Button>
+            <Menu Background="#FF727272" Foreground="White" FontSize="30" BorderBrush="#FF424242">
+                <MenuItem Header="Оборудование библиотеки" Height="50">
+                    <MenuItem Name="btn_mtolibrary" Background="#FF727272" Foreground="White" Header="МТО в библиотеке" Click="btn_mtolibrary_Click"/>
+                    <MenuItem Name="btn_deliverymto" Background="#FF727272" Foreground="White" Header="Поставки МТО" Click="btn_deliverymto_Click"/>
+                </MenuItem>
+            </Menu>
+            <Menu Background="#FF727272" Foreground="White" FontSize="30" BorderBrush="#FF424242">
+                <MenuItem Header="Отдел кадров" Height="50">
+                    <MenuItem Name="btn_applicants" Background="#FF727272" Foreground="White" Header="Соискатели" Click="btn_applicants_Click"/>
+                    <MenuItem Name="btn_employees" Background="#FF727272" Foreground="White" Header="Сотрудники" Click="btn_employees_Click"/>
+                </MenuItem>
+            </Menu>
+            <Menu Background="#FF727272" Foreground="White" FontSize="30" BorderBrush="#FF424242">
+                <MenuItem Header="Отдел читателей" Height="50">
+                    <MenuItem Name="btn_readers" Background="#FF727272" Foreground="White" Header="Читатели" Click="btn_readers_Click"/>
+                    <MenuItem Name="btn_librarycards" Background="#FF727272" Foreground="White" Header="Читательские билеты" Click="btn_librarycards_Click"/>
+                </MenuItem>
+            </Menu>
+            <Menu Background="#FF727272" Foreground="White" FontSize="30" BorderBrush="#FF424242">
+                <MenuItem Header="Книжный отдел" Height="49">
+                    <MenuItem Name="btn_books" Background="#FF727272" Foreground="White" Header="Книги" Click="btn_books_Click"/>
+                    <MenuItem Name="btn_bookslibrary" Background="#FF727272" Foreground="White" Header="Книги в библиотеке" Click="btn_bookslibrary_Click"/>
+                    <MenuItem Name="btn_extraditionbooks" Background="#FF727272" Foreground="White" Header="Выданные книги" Click="btn_extraditionbooks_Click"/>
+                </MenuItem>
+            </Menu>
+            <Button Name="btn_admin" Content="Админ" FontSize="30" Background="#FF727272" BorderBrush="#FF727272" Foreground="White" Width="110" Click="btn_admin_Click"></Button>
+        </StackPanel>
+        <DataGrid Margin="240,206,240,42"></DataGrid>
+        <TextBlock HorizontalAlignment="Center" Margin="0,170,0,0" Text="Список полученых книг" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" Foreground="#FF283C1C" Height="36" Width="420" TextAlignment="Center"/>
+
+    </Grid>
+</Window>

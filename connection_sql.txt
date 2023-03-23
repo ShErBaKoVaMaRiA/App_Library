@@ -1,0 +1,1 @@
+﻿Data Source=LAPTOP-CNCOHHF9;Initial Catalog=db_library; Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False

@@ -1,0 +1,99 @@
+﻿<Window x:Class="App_Library.Window_Books"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:App_Library" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        WindowState="Maximized" Loaded="Window_Loaded"
+         mc:Ignorable="d"
+         Height="750" Width="1300">
+    <!--<Window.Resources>
+        --><!--<local:StatusToColorConverter x:Key="StatusToColorConverter"/>--><!--
+            <Style TargetType="{x:Type DataGridRow}">
+                <Style.Setters>
+                <Setter Property="Background" Value="{Binding DecommissionBook, Converter={StaticResource StatusToColorConverter}}" />
+                </Style.Setters>
+            </Style>
+        </Window.Resources>-->
+    <Grid>
+        <Grid Height="59" VerticalAlignment="Top">
+            <TextBlock Height="59" Text="  Библиотека №209" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="Auto" FontSize="48" FontFamily="Bahnschrift SemiBold Condensed" Foreground="White" Background="#FF7C5E3B" Margin="0,0,0,0"/>
+            <Button Name="btn_profile" HorizontalAlignment="Right" Margin="0,9,88,0" Content="Пользователь" VerticalAlignment="Top" FontSize="22" Foreground="White" Background="{x:Null}" BorderBrush="White" Width="324" Height="41" Click="btn_profile_Click"/>
+            <Button Name="btn_authexit" Content="⍈" HorizontalAlignment="Right" Margin="0,0,10,7" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="36" Width="59" Click="btn_authexit_Click"/>
+        </Grid>
+        <StackPanel Name="Menu" Margin="0,59,0,0" Orientation="Horizontal" Background="#FF727272" Height="50" VerticalAlignment="Top">
+            <Button Name="btn_catalog" Content="Поиск" FontSize="30" Background="#FF727272" BorderBrush="#FF727272" Foreground="White" Width="110" Click="btn_catalog_Click"></Button>
+            <Menu Background="#FF727272" Foreground="White" FontSize="30" BorderBrush="#FF424242">
+                <MenuItem Header="Оборудование библиотеки" Height="50">
+                    <MenuItem Name="btn_mtolibrary" Background="#FF727272" Foreground="White" Header="МТО в библиотеке" Click="btn_mtolibrary_Click"/>
+                    <MenuItem Name="btn_deliverymto" Background="#FF727272" Foreground="White" Header="Поставки МТО" Click="btn_deliverymto_Click"/>
+                </MenuItem>
+            </Menu>
+            <Menu Background="#FF727272" Foreground="White" FontSize="30" BorderBrush="#FF424242">
+                <MenuItem Header="Отдел кадров" Height="50">
+                    <MenuItem Name="btn_applicants" Background="#FF727272" Foreground="White" Header="Соискатели" Click="btn_applicants_Click"/>
+                    <MenuItem Name="btn_employees" Background="#FF727272" Foreground="White" Header="Сотрудники" Click="btn_employees_Click"/>
+                </MenuItem>
+            </Menu>
+            <Menu Background="#FF727272" Foreground="White" FontSize="30" BorderBrush="#FF424242">
+                <MenuItem Header="Отдел читателей" Height="50">
+                    <MenuItem Name="btn_readers" Background="#FF727272" Foreground="White" Header="Читатели" Click="btn_readers_Click"/>
+                    <MenuItem Name="btn_librarycards" Background="#FF727272" Foreground="White" Header="Читательские билеты" Click="btn_librarycards_Click"/>
+                </MenuItem>
+            </Menu>
+            <Menu Background="#FF575151" Foreground="White" FontSize="30" BorderBrush="#FF424242">
+                <MenuItem Header="Книжный отдел" Height="49">
+                    <MenuItem Name="btn_books" Background="#FF575151" Foreground="White" Header="Книги" Click="btn_books_Click"/>
+                    <MenuItem Name="btn_bookslibrary" Background="#FF727272" Foreground="White" Header="Книги в библиотеке" Click="btn_bookslibrary_Click"/>
+                    <MenuItem Name="btn_extraditionbooks" Background="#FF727272" Foreground="White" Header="Выданные книги" Click="btn_extraditionbooks_Click"/>
+                </MenuItem>
+            </Menu>
+            <Button Name="btn_admin" Content="Админ" FontSize="30" Background="#FF727272" BorderBrush="#FF727272" Foreground="White" Width="110" Click="btn_admin_Click"></Button>
+        </StackPanel>
+        <DataGrid Name="datagrid" Margin="659,0,0,28" Height="560" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="614" Background="White" FontSize="16" SelectionChanged="datagrid_SelectionChanged">
+        </DataGrid>
+        <Grid Margin="52,0,682,10" Height="578" VerticalAlignment="Bottom">
+            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" Text="Название" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" Foreground="#FF283C1C"/>
+            <TextBox Name="tb_name" HorizontalAlignment="Left" Margin="0,40,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" Foreground="#FF283C1C" Height="38" Background="{x:Null}" Width="544" TextBlock.FontSize="30"/>
+            <TextBlock  HorizontalAlignment="Left" Margin="0,80,0,0" Text="Год издания" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" Foreground="#FF283C1C"/>
+            <xctk:MaskedTextBox Mask="9999"  Name="tb_year" HorizontalAlignment="Left" Margin="0,125,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" Foreground="#FF283C1C" Height="45" Background="{x:Null}" Width="178" TextBlock.FontSize="30"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,169,0,0" Text="Количество" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" Foreground="#FF283C1C"/>
+            <TextBox Name="tb_count" HorizontalAlignment="Left" Margin="0,209,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" Foreground="#FF283C1C" Height="38" Background="{x:Null}" Width="178" TextBlock.FontSize="30"/>
+            <TextBlock HorizontalAlignment="Left" Margin="270,169,0,0" Text="Стоимость" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" Foreground="#FF283C1C" Width="156"/>
+            <TextBox Name="tb_price" HorizontalAlignment="Left" Margin="270,209,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" Foreground="#FF283C1C" Height="42" Width="247" TextBlock.FontSize="30"/>
+            <TextBlock HorizontalAlignment="Left" Margin="218,83,0,0" Text="Издательство" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" Foreground="#FF283C1C" Height="45" Width="299"/>
+            <ComboBox Name="cb_publish" HorizontalAlignment="Left" Margin="218,123,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FF283C1C" Height="47" Background="{x:Null}" Width="311" TextBlock.FontSize="30"/>
+
+            <Button Content="Добавить" Name="btn_add" HorizontalAlignment="Left" Margin="0,470,0,0" VerticalAlignment="Top" FontSize="24" Background="#FFE4C096" Height="47" Width="178" BorderBrush="#FF7C5E3B" Foreground="#FF382208" Click="btn_add_Click"/>
+            <Button Content="Изменить" x:Name="btn_edit" HorizontalAlignment="Left" Margin="183,470,0,0" VerticalAlignment="Top" FontSize="24" Background="#FFE4C096" Height="47" Width="188" BorderBrush="#FF7C5E3B" Foreground="#FF382208" Click="btn_edit_Click"/>
+            <Button Content="Удалить" x:Name="btn_delete" HorizontalAlignment="Left" Margin="376,470,0,0" VerticalAlignment="Top" FontSize="24" Background="#FFE4C096" Height="47" Width="190" BorderBrush="#FF7C5E3B" Foreground="#FF382208" Click="btn_delete_Click"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,249,0,0" Text="Жанр" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" Foreground="#FF283C1C" Height="45" Width="299"/>
+            <ComboBox x:Name="cb_genre" HorizontalAlignment="Left" Margin="0,289,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FF283C1C" Height="47" Background="{x:Null}" Width="268" TextBlock.FontSize="30"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,349,0,0" Text="Автор" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" Foreground="#FF283C1C" Height="45" Width="535"/>
+            <ComboBox x:Name="cb_author" HorizontalAlignment="Left" Margin="0,389,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#FF283C1C" Height="47" Background="{x:Null}" Width="556" TextBlock.FontSize="30">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Width="Auto" Text="{Binding Surname_Author}" />
+                            <TextBlock Grid.Column="1" Text=" " />
+                            <TextBlock Width="Auto" Grid.Column="2" Text="{Binding Name_Author}" />
+                            <TextBlock Grid.Column="3" Text=" " />
+                            <TextBlock Width="Auto" Grid.Column="4" Text="{Binding MiddleName_Author}" />
+                        </Grid>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <TextBlock HorizontalAlignment="Left" Margin="283,251,0,0" Text="Дата списания" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="30" Foreground="#FF283C1C" Height="44" Width="227"/>
+            <xctk:MaskedTextBox Mask="99/99/9999"  Name="tb_dateDec" HorizontalAlignment="Left" Margin="283,294,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" Foreground="#FF283C1C" Height="45" Background="{x:Null}" Width="234" TextBlock.FontSize="30"/>
+
+
+        </Grid>
+    </Grid>
+</Window>
